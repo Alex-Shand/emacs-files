@@ -1,2 +1,3 @@
 # emacs-files
-Emacs Configuration
+Emacs Configuration  
+Goes in ~/.emacs.d
