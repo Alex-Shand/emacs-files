@@ -1,0 +1,6 @@
+.directory
+.last-package-update-day
+session.*
+auto-save-list/
+elpa/
+url/
