@@ -11,7 +11,9 @@
 (setq packages '( use-package
 		  auto-package-update
 		  nix-mode
-		  browse-kill-ring ))
+		  browse-kill-ring
+                  kotlin-mode
+                  cmake-mode ))
 
 ;; Load the builtin package manager
 (require 'package)

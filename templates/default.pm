@@ -1,7 +1,8 @@
 package ;
 
-use v5.22;
+use v5.24;
 use warnings;
+use autodie qw(:all);
 use Exporter qw( import );
-our @EXPORT = qw (  );
+our @EXPORT_OK = qw (  );
 
