@@ -13,7 +13,9 @@
 		  nix-mode
 		  browse-kill-ring
                   kotlin-mode
-                  cmake-mode ))
+                  cmake-mode
+                  cython-mode
+                  tuareg ))
 
 ;; Load the builtin package manager
 (require 'package)
