@@ -64,8 +64,8 @@
 ;; Misc configurations
 (use-package modules-misc)
 
-;; Open the scratch buffer in text mode
-(setq initial-major-mode 'text-mode)
+;; Open the scratch buffer in python-mode
+(setq initial-major-mode 'python-mode)
 
 ;; Suppress creation of backup and autosave files
 (setq make-backup-files nil
