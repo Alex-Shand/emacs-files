@@ -55,6 +55,10 @@
 ;; programming modes)
 (add-hook 'prog-mode-hook 'comment-auto-fill)
 
+;; Add fill line to all programming modes
+(require 'fill-column-indicator)
+(add-hook 'prog-mode-hook 'fci-mode)
+
 ;; Perl:
 
 ;; Replace perl-mode with cperl-mode
