@@ -50,8 +50,6 @@
 ;; Update packages once per week
 (require 'auto-package-update)
 (setq auto-package-update-interval 7)
-;; Prompt before downloading the updates
-(setq auto-package-update-prompt-before-update t)
 (auto-package-update-maybe)
 
 ;; Custom keybindings
