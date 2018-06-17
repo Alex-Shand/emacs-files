@@ -3,6 +3,10 @@
 ;; Use the full functionality of common lisp
 (require 'cl)
 
+(setq hostname (system-name))
+
+(delete-selection-mode 1)
+
 ;; Add ~/.emacs.d/modules/ to the load path
 (add-to-list 'load-path "/home/alex/.emacs.d/modules/")
 

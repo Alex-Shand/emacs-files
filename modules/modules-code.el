@@ -59,6 +59,10 @@
 (require 'fill-column-indicator)
 (add-hook 'prog-mode-hook 'fci-mode)
 
+;; Spellcheck comments in all programming modes
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'proc-mode-hook 'flyspell-buffer)
+
 ;; Perl:
 
 ;; Replace perl-mode with cperl-mode
