@@ -99,8 +99,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; This line was added by me, it seems to be the only way to change the comment
- ;; character in asm mode
  '(asm-comment-char 35)
  '(package-selected-packages (quote (nix-mode use-package auto-package-update))))
 (custom-set-faces
