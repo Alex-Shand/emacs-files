@@ -11,3 +11,5 @@
 
 ;; M-y opens browse-kill-ring
 (browse-kill-ring-default-keybindings)
+
+(global-set-key (kbd "C-n") 'revert-buffer)
