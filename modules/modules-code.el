@@ -27,7 +27,10 @@
 (use-package autoinsert
   :init
   ;; Directory where the templates will be stored
-  (defvar template-dir (concat (file-name-directory load-file-name) "templates/"))
+  (defvar emacs-dir (file-name-directory
+                     (directory-file-name
+                      (file-name-directory load-file-name))))
+  (defvar template-dir (concat emacs-dir "templates/"))
   ;; Don't prompt before insertion
   (setq auto-insert-query nil)
   ;; Tell auto-insert where the templates are
