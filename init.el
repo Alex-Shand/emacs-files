@@ -5,10 +5,10 @@
 
 (setq hostname (system-name))
 
-(delete-selection-mode 1)
+(setq modules-dir (concat (file-name-directory load-file-name) "modules/"))
 
 ;; Add ~/.emacs.d/modules/ to the load path
-(add-to-list 'load-path "/home/alex/.emacs.d/modules/")
+(add-to-list 'load-path modules-dir)
 
 ;; Packages listed here will be installed when this file is run,
 ;; removing a package doesn't uninstall it
@@ -20,8 +20,11 @@
                   cmake-mode
                   cython-mode
                   tuareg
+                  rust-mode
                   fill-column-indicator
-                  auto-complete ))
+                  auto-complete
+                  csharp-mode
+                  ))
 
 ;; Load the builtin package manager
 (require 'package)
@@ -82,7 +85,7 @@
 (defun close-all ()
   ;; Make the funciton available for interactive use
   (interactive)
-  ;; mapc runs a function for it's side affects, disguarding any return value
+  ;; mapc runs a function for its side affects, discarding any return value
   (mapc
    (lambda (x)
      ;; Find the name of the buffer

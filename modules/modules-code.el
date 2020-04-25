@@ -27,7 +27,7 @@
 (use-package autoinsert
   :init
   ;; Directory where the templates will be stored
-  (defvar template-dir "/home/alex/.emacs.d/templates/")
+  (defvar template-dir (concat (file-name-directory load-file-name) "templates/"))
   ;; Don't prompt before insertion
   (setq auto-insert-query nil)
   ;; Tell auto-insert where the templates are
@@ -63,22 +63,15 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'proc-mode-hook 'flyspell-buffer)
 
-;; Perl:
-
-;; Replace perl-mode with cperl-mode
-(defalias 'perl-mode 'cperl-mode)
-
-;; Indent with 4 spaces
-(setq cperl-indent-level 4)
-
 ;; Python:
 
 ;; The only way this seems to work is inside a hook
-(add-hook 'python-mode-hook '(lambda ()
-			       ;; Indent with 4 spaces
-			       (setq python-indent 4)
-			       ;; Don't attempt to guess indent level in existing python files
-			       (setq python-guess-indent nil)))
+(add-hook 'python-mode-hook
+          '(lambda ()
+             ;; Indent with 4 spaces
+             (setq python-indent 4)
+             ;; Don't attempt to guess indent level in existing python files
+             (setq python-guess-indent nil)))
 
 ;; C:
 
