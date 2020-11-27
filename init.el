@@ -24,6 +24,8 @@
                   fill-column-indicator
                   auto-complete
                   csharp-mode
+                  fsharp-mode
+                  solidity-mode
                   ))
 
 ;; Load the builtin package manager
