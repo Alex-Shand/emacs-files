@@ -9,8 +9,5 @@
 ;; Shift-<Arrow> highlights
 (transient-mark-mode t)
 
-;; M-y opens browse-kill-ring
-(browse-kill-ring-default-keybindings)
-
 ;; Throw away any changes to the buffer
 (global-set-key (kbd "C-n") 'revert-buffer)

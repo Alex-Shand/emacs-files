@@ -10,7 +10,8 @@
                        (save-match-data
                          (looking-at "^#!"))))
                    (not (file-executable-p buffer-file-name))
-                   (shell-command (concat "chmod u+x " (shell-quote-argument buffer-file-name)))
+                   (shell-command
+                    (concat "chmod u+x " (shell-quote-argument buffer-file-name)))
                    (message
                     (concat "Saved as script: " buffer-file-name)))))
 

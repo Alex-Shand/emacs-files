@@ -1,10 +1,8 @@
 ;; General setup, experimental settings and imports for other modules
 
-;; Use the full functionality of common lisp
 (require 'cl)
 
 (setq hostname (system-name))
-
 (setq modules-dir (concat (file-name-directory load-file-name) "modules/"))
 
 ;; Add ~/.emacs.d/modules/ to the load path
@@ -13,20 +11,15 @@
 ;; Packages listed here will be installed when this file is run,
 ;; removing a package doesn't uninstall it
 (setq packages '( use-package
-		  auto-package-update
-		  nix-mode
-		  browse-kill-ring
-                  kotlin-mode
-                  cmake-mode
+                  fill-column-indicator
+                  nix-mode
                   cython-mode
                   tuareg
                   rust-mode
-                  fill-column-indicator
-                  auto-complete
-                  csharp-mode
-                  fsharp-mode
-                  solidity-mode
                   ))
+
+;; Coconut mode (not in melpa)
+(load-file (concat (file-name-directory load-file-name) "coconut-mode.el"))
 
 ;; Load the builtin package manager
 (require 'package)
@@ -56,11 +49,6 @@
         (when (not (package-installed-p pkg))
           (package-install pkg)))))
 
-;; Update packages once per week
-(require 'auto-package-update)
-(setq auto-package-update-interval 7)
-(auto-package-update-maybe)
-
 ;; Custom keybindings
 (use-package modules-keys)
 
@@ -72,16 +60,6 @@
 
 ;; Misc configurations
 (use-package modules-misc)
-
-;; Open the scratch buffer in python-mode
-(setq initial-major-mode 'python-mode)
-
-;; Suppress creation of backup and autosave files
-(setq make-backup-files nil
-      auto-save-default nil)
-
-;; Indent with spaces not tabs
-(setq-default indent-tabs-mode nil)
 
 ;; Close all buffers besides the ones emacs uses
 (defun close-all ()
@@ -104,8 +82,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(asm-comment-char 35)
- '(package-selected-packages (quote (nix-mode use-package auto-package-update))))
+ '(package-selected-packages
+   (quote
+    (use-package fill-column-indicator nix-mode cython-mode tuareg rust-mode fsharp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
