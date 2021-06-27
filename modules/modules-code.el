@@ -15,6 +15,10 @@
                    (message
                     (concat "Saved as script: " buffer-file-name)))))
 
+;; Delete trailing whitespace before saving
+(add-hook 'before-save-hook
+          'delete-trailing-whitespace)
+
 ;; Add to language mode hook to auto-wrap comments at 80 characters
 (defun comment-auto-fill ()
   ;; Only autofill comments
