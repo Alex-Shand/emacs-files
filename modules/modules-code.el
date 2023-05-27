@@ -71,6 +71,14 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'proc-mode-hook 'flyspell-buffer)
 
+;; Perl:
+
+;; Replace perl-mode with cperl-mode
+(defalias 'perl-mode 'cperl-mode)
+
+;; Indent with 4 spaces
+(setq cperl-indent-level 4)
+
 ;; Python:
 
 ;; The only way this seems to work is inside a hook
